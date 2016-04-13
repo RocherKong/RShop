@@ -5,14 +5,14 @@
     <!--消息队列 提供者-->
     <Provider Name="RabbitMQProvider" Type="RShop.Infrastructure.MQ.Impl.RabbitMQProvider,RShop.Infrastructure.MQ">
       <Parameters>
-        <Parameter Key="HostName" Value=""/> 
+        <Parameter Key="HostName" Value="8.8.8.8"/> 
         <Parameter Key="UserName" Value="sms"/>
         <Parameter Key="Password" Value="sms"/>
       </Parameters>
     </Provider>
     <Provider Name="RabbitMQProvider_Logging" Type="RShop.Infrastructure.MQ.Impl.RabbitMQProvider,RShop.Infrastructure.MQ">
       <Parameters>
-        <Parameter Key="HostName" Value=""/> 
+        <Parameter Key="HostName" Value="8.8.8.8"/> 
         <Parameter Key="UserName" Value="logging"/>
         <Parameter Key="Password" Value="logging"/>
       </Parameters>
