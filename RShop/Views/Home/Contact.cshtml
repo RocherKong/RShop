@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<!--banner-->
+<div class="banner1 about-bnr">
+</div>
+<!--//banner-->
+<!--contact-->
+
+<div class="contact">
+    <div class="container">
+        <div class="contact-grids">
+            <div class="col-md-8 map">
+                <h1 class="hdng">How to find us</h1>
+                <div id="allmap"></div>
+                @*<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.182370726!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2sin!4v1433744055746"></iframe>*@
+            </div>
+            <div class="col-md-4 address">
+                <h2>Contact info</h2>
+                <p class="cnt-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit,sheets containing Lorem Ipsum passages sed do </p>
+                <p>Eiusmod Tempor inc</p>
+                <p>9560 St Dolor,London</p>
+                <p>Telephone : +81 138 **** ****</p>
+                <p>QQ : +897734923</p>
+                <p>Email : <a href="mailto:rocher@126.com">rocher@126.com</a></p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class=" contact-form">
+            <h3 class="title">Contact form</h3>
+            <form>
+                <div class="col-md-6 form-grids">
+                    <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+                    <input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                    <input type="text" value="Telephone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone';}" required="">
+                </div>
+                <div class="col-md-6 form-grids">
+                    <textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+                    <input type="submit" value="Submit">
+                </div>
+                <div class="clearfix"> </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--//contact-->
+@section scripts{
+<style type="text/css">
+     #allmap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+</style>
+<script type="text/javascript">
+	//百度地图API功能
+	function loadJScript() {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = "http://api.map.baidu.com/api?v=2.0&ak=	11d3248127556009b8a9e01a62716490&callback=init";
+	    //document.body.appendChild(script);
+		$("#allmap").append(script);
+	}
+	function init() {
+		var map = new BMap.Map("allmap");            // 创建Map实例
+		var point = new BMap.Point(121.76, 31.05); // 创建点坐标
+		map.centerAndZoom(point,15);
+		map.enableScrollWheelZoom();                 //启用滚轮放大缩小
+	}
+	window.onload = loadJScript;  //异步加载地图
+</script>
+
+<script type="text/javascript" src="~/Scripts/move-top.js"></script>
+<script type="text/javascript" src="~/Scripts/easing.js"></script>
+    <!--smooth-scrolling-of-move-up-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+			};
+			*/
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!--//smooth-scrolling-of-move-up-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+}

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--提供者参数配置-->
+<ProviderConfig xmlns="http://ahoo.me/schemas/ProviderConfig.xsd">
+  <Providers>
+    <!--消息队列 提供者-->
+    <Provider Name="RabbitMQProvider" Type="RShop.Infrastructure.MQ.Impl.RabbitMQProvider,RShop.Infrastructure.MQ">
+      <Parameters>
+        <Parameter Key="HostName" Value=""/>
+        <Parameter Key="UserName" Value="sms"/>
+        <Parameter Key="Password" Value="sms"/>
+      </Parameters>
+    </Provider>
+    <Provider Name="RabbitMQProvider_Logging" Type="RShop.Infrastructure.MQ.Impl.RabbitMQProvider,RShop.Infrastructure.MQ">
+      <Parameters>
+        <Parameter Key="HostName" Value=""/>
+        <Parameter Key="UserName" Value="logging"/>
+        <Parameter Key="Password" Value="logging"/>
+      </Parameters>
+    </Provider>
+    <!--短信服务提供者-->
+    <Provider Name="ZTSMSProvider" Type="RShop.Infrastructure.SMS.Impl.ZTSMSProvider,RShop.Infrastructure.SMS">
+      <Parameters>
+        <Parameter Key="CallUrl" Value="http://www.ztsms.cn:8800/sendXSms.do"/>
+        <Parameter Key="UserName" Value="RShopRShop"/>
+        <Parameter Key="Password" Value="f8650f7aab90cd90aaa371fbf29d2a69"/>
+      </Parameters>
+    </Provider>
+    <!--缓存提供者-->
+    <Provider Name="RedisCacheProvider" Type="RShop.Infrastructure.Cache.Impl.RedisCacheProvider,RShop.Infrastructure.Cache">
+      <Parameters>
+        <Parameter Key="ConnectionString" Value="service.RShop.me,password=b0db62a2939741f3ba560ca6861bc582"/>
+      </Parameters>
+    </Provider>
+    <Provider Name="EMailProviderBasic" Type="RShop.Infrastructure.EMail.Impl.EMailProviderBasic,RShop.Infrastructure.EMail">
+      <Parameters>
+        <Parameter Key="Host" Value="smtp.exmail.qq.com"/>
+        <Parameter Key="UserName" Value="sandserver1@RShopRShop.net"/>
+        <Parameter Key="Password" Value="MX2015-*system/email"/>
+        <Parameter Key="Port" Value="25"/>
+      </Parameters>
+    </Provider>
+  </Providers>
+</ProviderConfig>
