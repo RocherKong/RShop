@@ -12,7 +12,7 @@
     </Provider>
     <Provider Name="RabbitMQProvider_Logging" Type="RShop.Infrastructure.MQ.Impl.RabbitMQProvider,RShop.Infrastructure.MQ">
       <Parameters>
-        <Parameter Key="HostName" Value=""/>
+        <Parameter Key="HostName" Value=""/> 
         <Parameter Key="UserName" Value="logging"/>
         <Parameter Key="Password" Value="logging"/>
       </Parameters>
