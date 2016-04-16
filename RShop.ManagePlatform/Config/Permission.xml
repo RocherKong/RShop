@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--运维平台功能权限-->
+<Permission>
+  <Module Name="仪表盘" Controller="Home" Action="Index">
+   
+  </Module>
+  <Module Name="用户管理"  Code="UserManagement">
+   
+  </Module>
+  <Module Name="产品管理"  Code="ProductManagement">
+    <Menu Name="产品分类"  Controller="ProductCategory" Action="Index">
+      <Action Name="添加同级分类"  Controller="ProductCategory" Action="AddPeer" />
+      <Action Name="添加下级分类"  Controller="ProductCategory" Action="AddChild" />
+    </Menu>
+  </Module>
+  <Module Name="订单管理" Code="OrderManagement">
+
+  </Module>
+  <Module Name="统计报表"  Code="Report">
+
+  </Module>
+  <Module Name="系统管理"  Code="Sys">
+
+  </Module>
+</Permission>
