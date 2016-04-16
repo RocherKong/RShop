@@ -5,7 +5,7 @@
         /*
         交易系统API HOST
         */
-        TC_Host: 'http://api.tc.51mydao.com/',
+        TC_Host: 'http://api.tc.i4ta.com/',
         /*
          获取API地址
         */
@@ -31,7 +31,7 @@
         //browse_button: 'btn_upLoadImg',
         uptoken_url: '/QiNiu/GetToken',
         unique_names: true,
-        domain: 'http://static.51mydao.com/',
+        domain: 'http://static.i4ta.com/',
         max_file_size: '100mb',
         flash_swf_url: '/js/plugins/plupload/Moxie.swf',
         max_retries: 3,
