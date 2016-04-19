@@ -125,6 +125,102 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\Rel_Category_Attribute.xml">
+      <Link>SqlMaps\Rel_Category_Attribute.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\Rel_Enterprise_Brand.xml">
+      <Link>SqlMaps\Rel_Enterprise_Brand.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\Rel_Member_Enterprise.xml">
+      <Link>SqlMaps\Rel_Member_Enterprise.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Administrator.xml">
+      <Link>SqlMaps\T_Administrator.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_App.xml">
+      <Link>SqlMaps\T_App.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Brand.xml">
+      <Link>SqlMaps\T_Brand.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ChangeConsultantApply.xml">
+      <Link>SqlMaps\T_ChangeConsultantApply.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_City.xml">
+      <Link>SqlMaps\T_City.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ConsultantScore.xml">
+      <Link>SqlMaps\T_ConsultantScore.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ConsultingHistory.xml">
+      <Link>SqlMaps\T_ConsultingHistory.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Country.xml">
+      <Link>SqlMaps\T_Country.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_DeliveryAddress.xml">
+      <Link>SqlMaps\T_DeliveryAddress.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_District.xml">
+      <Link>SqlMaps\T_District.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Enterprise.xml">
+      <Link>SqlMaps\T_Enterprise.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ExclusiveConsultant.xml">
+      <Link>SqlMaps\T_ExclusiveConsultant.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Favorite.xml">
+      <Link>SqlMaps\T_Favorite.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_InviteMember.xml">
+      <Link>SqlMaps\T_InviteMember.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Invoice.xml">
+      <Link>SqlMaps\T_Invoice.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Member.xml">
+      <Link>SqlMaps\T_Member.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Product.xml">
+      <Link>SqlMaps\T_Product.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ProductAttribute.xml">
+      <Link>SqlMaps\T_ProductAttribute.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ProductAttributeOption.xml">
+      <Link>SqlMaps\T_ProductAttributeOption.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ProductAttributeValue.xml">
+      <Link>SqlMaps\T_ProductAttributeValue.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ProductCategory.xml">
+      <Link>SqlMaps\T_ProductCategory.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ProductDoc.xml">
+      <Link>SqlMaps\T_ProductDoc.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ProductImage.xml">
+      <Link>SqlMaps\T_ProductImage.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ProductRepair.xml">
+      <Link>SqlMaps\T_ProductRepair.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Province.xml">
+      <Link>SqlMaps\T_Province.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_Score.xml">
+      <Link>SqlMaps\T_Score.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\T_ScoreLog.xml">
+      <Link>SqlMaps\T_ScoreLog.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\V_Enterprise_Member.xml">
+      <Link>SqlMaps\V_Enterprise_Member.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\文件\代码生成\MyBatis.ConfigTemplate\TemplateFile\Rocher\MybatisMapForMS-SQL\V_ExclusiveConsultant.xml">
+      <Link>SqlMaps\V_ExclusiveConsultant.xml</Link>
+    </Content>
     <Content Include="Config\Permission.xml" />
     <Content Include="css\AdminLTE.css" />
     <Content Include="css\AdminLTE.min.css" />
@@ -1131,6 +1227,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="SqlMap.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

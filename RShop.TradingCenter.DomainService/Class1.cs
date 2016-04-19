@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RShop.TradingCenter.DataAccess
+namespace RShop.TradingCenter.DomainService
 {
     public class Class1
     {
