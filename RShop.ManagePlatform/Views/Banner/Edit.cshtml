@@ -1,0 +1,147 @@
+﻿@model IList<T_Banner>
+@{
+    ViewBag.Title = "编辑Banner图";
+}
+<div class="box box-primary">
+
+    <input type="hidden" class="form-control" id="Id" name="Id" value="@ViewBag.Id">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-sm-8">
+                <form class="form-horizontal" id="BannerForm" method="post">
+                    <div class="form-group">
+                        <label for="Title" class="col-sm-3 control-label">Banner名称</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Title" name="Title" placeholder="Banner名称" value="@Model[0].Title" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Position" class="col-sm-3 control-label">Banner位置</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Position" name="Position" placeholder="Banner位置" value="@Model[0].Position" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Image" class="col-sm-3 control-label">Banner图</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="txt_ImageList" id="txt_ImageList" required disabled>
+                                <input type="hidden" name="ImageList" id="ImageList" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-info btn-flat" id="btn_upLoadBannerImgs">上传 !</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">缩略图</label>
+                        <div id="BannerImgs_Wrap" class="col-sm-offset-3">
+                            @foreach (var m in Model)
+                            {
+                                <div class="row  col-sm-12">
+                                    <div class="col-sm-2">
+                                        <img class="img-responsive" src="@m.ImageUrl" />
+                                        <a class="btn btn-danger btn-sm btn-flat pull-right" data-role="btn_removeImg">X</a>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control RedirectUrl" id="RedirectUrl" name="RedirectUrl" value="@m.RedirectUrl" placeholder="跳转链接">
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="box-footer">
+        <input type="submit" class="btn btn-lg btn-success btn-flat btn-block" value="保   存" id="btnBannerForm" form="BannerForm" />
+    </div>
+</div>
+
+@section js{
+    <script src="~/js/plugins/plupload/plupload.full.min.js"></script>
+    <script src="~/js/plugins/plupload/i18n/zh_CN.js"></script>
+    <script src="~/js/qiniu.js"></script>
+    <script src="~/js/template.js"></script>
+    <script type="text/template" id="temp_BannerImg">
+        <div class="row  col-sm-12">
+            <div class="col-sm-2">
+                <img class="img-responsive" src="{{imgUrl}}" />
+                <a class="btn btn-danger btn-sm btn-flat pull-right" data-role="btn_removeImg">X</a>
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control RedirectUrl" id="RedirectUrl" name="RedirectUrl" placeholder="跳转链接">
+            </div>
+        </div>
+    </script>
+
+
+    <script>
+        $(function () {
+            //start 产品图片批量上传
+            var lstBannerImg = new Array();//初始化
+            var pro_options = $.extend(true, defaultUpLoaderOptions, {
+                browse_button: 'btn_upLoadBannerImgs' , multi_selection: true,
+                init: {
+                    FileUploaded: function (up, file, info) {
+                        var domain = up.getOption('domain');
+                        var res = JSON.parse(info);
+                        var sourceLink = domain + res.key;
+                        $BannerImgs_Wrap = $('#BannerImgs_Wrap');
+                        var imgHtml = template('temp_BannerImg', { imgUrl: sourceLink });
+                        $BannerImgs_Wrap.append(imgHtml);
+                      //  lstBannerImg.push(sourceLink);
+                    }
+                }
+            });
+            var uploader_BannerImg = Qiniu.uploader(pro_options);
+            //end 产品图片批量上传
+            $('#BannerForm').ajaxForm({
+                enctype: "application/x-www-form-urlencoded",
+                beforeSerialize: function ($form, options) {
+                    lstBannerImg.length = 0;
+                    $('#BannerImgs_Wrap div div img').each(function (i, BannerImg) {
+                        lstBannerImg.push(this.src + ';' + this.parentElement.nextElementSibling.children[0].value);
+                        console.log(JSON.stringify(lstBannerImg));
+                        //lstBannerImg.push({ imgUrl: this.src, redirectUrl: this.parentElement.nextElementSibling.children[0].value });
+                    });
+
+                    $('#txt_ImageList').val(lstBannerImg);
+                    $('#ImageList').val(lstBannerImg);
+                   // console.log(lstBannerImg);
+                },
+                success: function (resp, statusText, xhr, $form) {
+                    if (resp.IsSuccess) {
+                        //artDialog.tips('添加公告成功！');
+                        art.dialog('添加成功！', function () {  });
+                    } else {
+                        artDialog.tips('添加失败：' + resp.Message);
+                    };
+                }
+            });
+
+
+        });
+
+
+
+        var productEdit = {
+            init: function () {
+                this.bindEvnet();
+            },
+            bindEvnet: function () {
+                $('.select2').select2();
+                $(document).on('click', 'a[data-role=btn_removeImg]', function () {
+                    this.parentElement.parentElement.remove();
+                });
+
+            }
+        };
+        productEdit.init();
+
+    </script>
+}

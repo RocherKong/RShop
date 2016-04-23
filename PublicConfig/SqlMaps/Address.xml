@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+*******************************
+ Create By Ahoo Wang 
+ Date 2016-03-23 16:22
+*******************************
+-->
+<!--需要设置 SqlNameSpace 一般设置为TableName -->
+<sqlMap namespace="Address" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <alias>
+    <!--设置查询映射表实体-->
+    <typeAlias alias="T_Country" type="MaiDao.Public.Entity.T_Country,MaiDao.Public.Entity" />
+    <typeAlias alias="T_Province" type="MaiDao.Public.Entity.T_Province,MaiDao.Public.Entity" />
+    <typeAlias alias="T_City" type="MaiDao.Public.Entity.T_City,MaiDao.Public.Entity" />
+    <typeAlias alias="T_District" type="MaiDao.Public.Entity.T_District,MaiDao.Public.Entity" />
+  </alias>
+  <!--缓存策略-->
+  <cacheModels>
+    <cacheModel id="Address_EntityCache" implementation="MEMORY">
+      <flushInterval hours="24"/>
+    </cacheModel>
+  </cacheModels>
+  <statements>
+    <select id="GetProvinces" parameterClass="Hashtable" resultClass="T_Province" cacheModel="Address_EntityCache">
+      SELECT T.* From T_Province T
+      Where T.CountryId=#CountryId#
+    </select>
+    <select id="GetCitysByProvinceId" parameterClass="Hashtable" resultClass="T_City" cacheModel="Address_EntityCache">
+      SELECT T.* From T_City T
+      Where T.ProvinceId=#ProvinceId#
+    </select>
+    <select id="GetCitysByChina" parameterClass="Hashtable" resultClass="T_City" cacheModel="Address_EntityCache">
+      SELECT T.* From T_City T
+      Where T.CountryId=0
+    </select>
+    <select id="GetDistrictsByCityId" parameterClass="Hashtable" resultClass="T_District" cacheModel="Address_EntityCache">
+      SELECT T.* From T_District T
+      Where T.CityId=#CityId#
+    </select>
+    <select id="GetDistrictsByChina" parameterClass="Hashtable" resultClass="T_District" cacheModel="Address_EntityCache">
+      SELECT T.* From T_District T
+      Where T.CountryId=0
+    </select>
+  </statements>
+</sqlMap>

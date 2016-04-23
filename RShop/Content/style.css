@@ -1468,9 +1468,9 @@ h1.hdng {
     float: left;
     width: 50%;
 }
-.welcome-info {
+/*.welcome-info {
     margin: 2em 0;
-}
+}*/
 .banner-bottom {
     padding: 4em 0;
 }
@@ -2028,9 +2028,9 @@ h2.hdng-two {
 .banner1 {
     min-height: 167px;
 }
-.welcome-info {
+/*.welcome-info {
     margin: 1em 0;
-}
+}*/
 .welcome-grids:nth-child(1) {
     padding-right: .5em;
 }

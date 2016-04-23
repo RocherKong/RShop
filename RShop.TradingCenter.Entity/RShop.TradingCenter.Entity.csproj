@@ -47,6 +47,7 @@
     <Compile Include="Rel_Member_Enterprise.cs" />
     <Compile Include="T_Administrator.cs" />
     <Compile Include="T_App.cs" />
+    <Compile Include="T_Banner.cs" />
     <Compile Include="T_Brand.cs" />
     <Compile Include="T_ChangeConsultantApply.cs" />
     <Compile Include="T_City.cs" />

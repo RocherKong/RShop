@@ -25,5 +25,10 @@ namespace RShop.Infrastructure.Web
         {
             return new PagedList<T>(currentPageItems, pageIndex, pageSize, totalItemCount);
         }
+
+        public static PagedList<T> ToMvcPagedList2<T>(this IList<T> currentPageItems, int pageIndex, int pageSize)
+        {
+            return new PagedList<T>(currentPageItems, pageIndex, pageSize, currentPageItems.Count);
+        }
     }
 }

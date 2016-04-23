@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+*******************************
+ Create By Ahoo Wang 
+ Date 2016-04-11 11:38
+*******************************
+-->
+<!--需要设置 SqlNameSpace 一般设置为TableName -->
+<sqlMap namespace="T_Enterprise" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <alias>
+    <!--设置查询映射表实体-->
+    <typeAlias alias="T_Enterprise" type="MaiDao.TradingCenter.Entity.T_Enterprise,MaiDao.TradingCenter.Entity" />
+  </alias>
+  <!--缓存策略-->
+  <cacheModels>
+    <cacheModel id="T_Enterprise_EntityCache" implementation="MEMORY">
+      <flushInterval hours="24"/>
+      <flushOnExecute statement="T_Enterprise.Insert"/>
+      <flushOnExecute statement="T_Enterprise.Delete"/>
+      <flushOnExecute statement="T_Enterprise.Update"/>
+    </cacheModel>
+  </cacheModels>
+  <statements>
+    <!--公共查询参数片段-->
+    <sql id="QueryParams">
+      Where T.IsDelete=0 
+      <isNotEmpty prepend="And" property="MemberId">
+        Exists(Select * From Rel_Member_Enterprise ME
+        Where ME.Status=1
+        T.Id=ME.EnterpriseId And ME.MemberId=#MemberId#)
+      </isNotEmpty>
+      <isNotEmpty prepend="And" property="IsRoot">
+        T.IsRoot=#IsRoot#
+      </isNotEmpty>
+      <isNotEmpty prepend="And" property="EnterpriseName">
+        T.EnterpriseName Like  '%' + #EnterpriseName# + '%'
+      </isNotEmpty>
+      <isNotEmpty prepend="And" property="EnterpriseStatus">
+        T.EnterpriseStatus=#EnterpriseStatus#
+      </isNotEmpty>
+      <isNotEmpty prepend="And" property="EnterpriseType">
+        T.EnterpriseType=#EnterpriseType#
+      </isNotEmpty>
+    </sql>
+
+    <!--新增-->
+    <insert id="Insert" parameterClass="T_Enterprise">
+      INSERT INTO T_Enterprise
+      (EnterpriseType
+      ,EnterpriseName
+      ,ProvinceId
+      ,CityId
+      ,DistrictId
+      ,Address
+      ,Fax
+      ,Landline
+      ,LegalPerson
+      ,RegisteredCapital
+      ,BusinessLicense
+      ,OrgCodeCer
+      ,TaxRegCer
+      ,Industry
+      ,Status
+      ,IsDelete
+      ,CreateTime
+      ,Creator)
+      VALUES
+      (#EnterpriseType#
+      ,#EnterpriseName#
+      ,#ProvinceId#
+      ,#CityId#
+      ,#DistrictId#
+      ,#Address#
+      ,#Fax#
+      ,#Landline#
+      ,#LegalPerson#
+      ,#RegisteredCapital#
+      ,#BusinessLicense#
+      ,#OrgCodeCer#
+      ,#TaxRegCer#
+      ,#Industry#
+      ,#Status#
+      ,#IsDelete#
+      ,GetDate()
+      ,#Creator#)
+      <selectKey property="Id" type="post" resultClass="long">
+        Select @@IDENTITY
+      </selectKey>
+    </insert>
+
+    <!--逻辑删除-->
+    <update id="Delete" parameterClass="Hashtable">
+      UPDATE T_Enterprise
+      SET IsDelete=1 Where Id=#Id#
+    </update>
+
+    <!--逻辑删除-->
+    <update id="DeleteList" parameterClass="Hashtable">
+      UPDATE T_Enterprise
+      SET IsDelete=1 Where Id
+      <iterate prepend="In" property="Ids" open="(" close=")" conjunction=",">#Ids[]#</iterate>
+    </update>
+
+    <!--更新-->
+    <update id="Update" parameterClass="T_Enterprise">
+      UPDATE T_Enterprise
+      SET
+      EnterpriseType = #EnterpriseType#
+      ,EnterpriseName = #EnterpriseName#
+      ,ProvinceId = #ProvinceId#
+      ,CityId = #CityId#
+      ,DistrictId = #DistrictId#
+      ,Address = #Address#
+      ,Fax = #Fax#
+      ,Landline=#Landline#
+      ,LegalPerson = #LegalPerson#
+      ,RegisteredCapital = #RegisteredCapital#
+      ,BusinessLicense = #BusinessLicense#
+      ,OrgCodeCer = #OrgCodeCer#
+      ,TaxRegCer = #TaxRegCer#
+      ,Industry = #Industry#
+      ,Status = #Status#
+      WHERE Id=#Id#
+    </update>
+
+    <!--获取数据列-->
+    <select id="GetList" parameterClass="Hashtable" resultClass="V_Enterprise_Member">
+      SELECT T.* From V_Enterprise_Member T
+      <include refid="QueryParams"/>
+      Order By T.Id DESC
+    </select>
+
+    <!--获取分页数据-->
+    <select id="GetListByPage" parameterClass="Hashtable" resultClass="V_Enterprise_Member">
+      Select * From (Select ROW_NUMBER() Over(Order By T.EnterpriseId DESC) Row_Index,T.*
+      From V_Enterprise_Member T
+      <include refid="QueryParams"/>
+      ) TT
+      Where TT.Row_Index Between ((#PageIndex#-1)*#PageSize#+1) And (#PageIndex#*#PageSize#)
+    </select>
+
+    <!--获取记录数-->
+    <select id="GetRecord" parameterClass="Hashtable" resultClass="int">
+      Select Count(1) From V_Enterprise_Member T
+      <include refid="QueryParams"/>
+    </select>
+
+    <!--获取表映射实体-->
+    <select id="GetEntity" parameterClass="Hashtable" resultClass="T_Enterprise">
+      Select Top 1 T.* From T_Enterprise T
+      Where T.IsDelete=0 
+      <isNotEmpty prepend="And" property="Id">
+        T.Id=#Id#
+      </isNotEmpty>
+      <isNotEmpty prepend="And" property="MemberId">
+        Exists(Select * From Rel_Member_Enterprise ME
+        Where ME.Status=1
+        T.Id=ME.EnterpriseId And ME.MemberId=#MemberId#)
+      </isNotEmpty>
+    </select>
+
+    <!--是否存在该记录-->
+    <select id="IsExist"  parameterClass="Hashtable" resultClass="int">
+      Select Count(1) From T_Enterprise T
+      <include refid="QueryParams"/>
+    </select>
+
+    <!--获取前N行数据-->
+    <select id="GetTop" parameterClass="Hashtable" resultClass="T_Enterprise">
+      Select Top (#Num#) * From T_Enterprise T
+      <include refid="QueryParams"/>
+    </select>
+    
+    <!--获取表映射实体-->
+    <select id="GetEntityView" parameterClass="Hashtable" resultClass="V_Enterprise_Member">
+      Select Top 1 T.* From V_Enterprise_Member T
+      Where T.IsDelete=0
+      <isNotEmpty prepend="And" property="Id">
+        T.EnterpriseId=#Id#
+      </isNotEmpty>
+    </select>
+    
+    <!--Rel_Brand-->
+    <insert id="InsertRelBrand" parameterClass="Rel_Enterprise_Brand">
+      INSERT INTO Rel_Enterprise_Brand
+      (EnterpriseId
+      ,BrandId
+      ,AgentCer
+      ,IsDelete
+      ,CreateTime
+      ,Creator)
+      VALUES
+      (#EnterpriseId#
+      ,#BrandId#
+      ,#AgentCer#
+      ,#IsDelete#
+      ,GetDate()
+      ,#Creator#)
+    </insert>
+    <select id="GetRelBrands" parameterClass="Hashtable" resultClass="Rel_Enterprise_Brand">
+      Select  T.* From Rel_Enterprise_Brand T
+      Where T.IsDelete=0
+      <isNotEmpty prepend="And" property="EnterpriseId">
+        T.EnterpriseId=#EnterpriseId#
+      </isNotEmpty>
+    </select>
+    
+    <delete id="ClearRelBrand" parameterClass="Hashtable" >
+      Delete Rel_Enterprise_Brand
+      Where EnterpriseId=#EnterpriseId#
+    </delete>
+  </statements>
+</sqlMap>

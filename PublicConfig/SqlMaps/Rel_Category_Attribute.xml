@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+*******************************
+ Create By Ahoo Wang 
+ Date 2016-03-23 16:27
+*******************************
+-->
+<!--需要设置 SqlNameSpace 一般设置为TableName -->
+<sqlMap namespace="Rel_Category_Attribute" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <alias>
+    <!--设置查询映射表实体-->
+    <!--<typeAlias alias="Rel_Category_Attribute" type="MaiDao.TradingCenter.Entity.Rel_Category_Attribute,MaiDao.TradingCenter.Entity" />-->
+    <!--<typeAlias alias="T_ProductAttribute" type="MaiDao.TradingCenter.Entity.T_ProductAttribute,MaiDao.TradingCenter.Entity" />-->
+  </alias>
+  <!--缓存策略-->
+  <cacheModels>
+    <cacheModel id="Rel_Category_Attribute_EntityCache" implementation="MEMORY">
+      <flushInterval hours="24"/>
+      <flushOnExecute statement="Rel_Category_Attribute.Insert"/>
+      <flushOnExecute statement="Rel_Category_Attribute.Delete"/>
+      <flushOnExecute statement="Rel_Category_Attribute.Update"/>
+    </cacheModel>
+  </cacheModels>
+  <statements>
+    <!--公共查询参数片段-->
+    <sql id="QueryParams">
+      Where T.IsDelete=0
+    </sql>
+
+    <!--新增-->
+    <insert id="Insert" parameterClass="Rel_Category_Attribute">
+      INSERT INTO Rel_Category_Attribute
+      (AttributeId)
+      VALUES
+      (#AttributeId#)
+      <selectKey property="CategoryId" type="post" resultClass="long">
+        Select @@IDENTITY
+      </selectKey>
+    </insert>
+
+    <!--逻辑删除-->
+    <update id="Delete" parameterClass="Hashtable">
+      UPDATE Rel_Category_Attribute
+      SET IsDelete=1 Where CategoryId=#Id#
+    </update>
+
+    <!--逻辑删除-->
+    <update id="DeleteList" parameterClass="Hashtable">
+      UPDATE Rel_Category_Attribute
+      SET IsDelete=1 Where CategoryId
+      <iterate prepend="In" property="Ids" open="(" close=")" conjunction=",">#Ids[]#</iterate>
+    </update>
+
+    <!--更新-->
+    <update id="Update" parameterClass="Rel_Category_Attribute">
+      UPDATE Rel_Category_Attribute
+      SET
+      AttributeId = #AttributeId#
+      WHERE CategoryId=#CategoryId#
+    </update>
+
+    <!--获取数据列-->
+    <select id="GetList" parameterClass="Hashtable" resultClass="Rel_Category_Attribute">
+      SELECT T.* From Rel_Category_Attribute T
+      <include refid="QueryParams"/>
+      Order By T.CategoryId DESC
+    </select>
+
+    <select id="GetAttrsList" parameterClass="Hashtable" resultClass="T_ProductAttribute">
+      SELECT tpa.*,tpav.AttributeValue FROM Rel_Category_Attribute as T
+      LEFT JOIN T_ProductAttribute AS tpa
+      ON T.AttributeId=tpa.Id
+      LEFT JOIN T_ProductAttributeValue AS tpav
+      on tpav.AttributeId=tpa.Id
+      where T.CategoryId=#CategoryId#
+      AND tpa.IsDelete=0
+      AND (tpav.IsDelete=0 or tpav.IsDelete is null)
+    </select>
+
+    <!--获取分页数据-->
+    <select id="GetListByPage" parameterClass="Hashtable" resultClass="Rel_Category_Attribute">
+      Select * From (Select ROW_NUMBER() Over(Order By T.CategoryId DESC) Row_Index,T.*
+      From Rel_Category_Attribute T
+      <include refid="QueryParams"/>
+      ) TT
+      Where TT.Row_Index Between ((#PageIndex#-1)*#PageSize#+1) And (#PageIndex#*#PageSize#)
+    </select>
+
+    <!--获取记录数-->
+    <select id="GetRecord" parameterClass="Hashtable" resultClass="int">
+      Select Count(1) From Rel_Category_Attribute T
+      <include refid="QueryParams"/>
+    </select>
+
+    <!--获取表映射实体-->
+    <select id="GetEntity" parameterClass="Hashtable" resultClass="Rel_Category_Attribute">
+      Select Top 1 T.* From Rel_Category_Attribute T
+      Where T.IsDelete=0
+      <isNotEmpty prepend="And" property="Id">
+        T.CategoryId=#Id#
+      </isNotEmpty>
+    </select>
+
+    <!--是否存在该记录-->
+    <select id="IsExist"  parameterClass="Hashtable" resultClass="int">
+      Select Count(1) From Rel_Category_Attribute T
+      <include refid="QueryParams"/>
+    </select>
+
+    <!--获取前N行数据-->
+    <select id="GetTop" parameterClass="Hashtable" resultClass="Rel_Category_Attribute">
+      Select Top (#Num#) * From Rel_Category_Attribute T
+      <include refid="QueryParams"/>
+    </select>
+  </statements>
+</sqlMap>

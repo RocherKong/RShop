@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+*******************************
+// Create By Rocher Kong  
+ Date 2016-04-21 09:56
+*******************************
+-->
+<!--需要设置 SqlNameSpace 一般设置为TableName -->
+<sqlMap namespace="T_Banner" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <alias>
+    <!--设置查询映射表实体-->
+    <typeAlias alias="T_Banner" type="MaiDao.TradingCenter.Entity.T_Banner,MaiDao.TradingCenter.Entity" />
+  </alias>
+  <!--缓存策略-->
+  <cacheModels>
+    <cacheModel id="T_Banner_EntityCache" implementation="MEMORY">
+      <flushInterval hours="24"/>
+      <flushOnExecute statement="T_Banner.Insert"/>
+      <flushOnExecute statement="T_Banner.Delete"/>
+      <flushOnExecute statement="T_Banner.Update"/>
+    </cacheModel>
+  </cacheModels>
+  <statements>
+    <!--公共查询参数片段-->
+    <sql id="QueryParams">
+      Where T.IsDelete=0
+      <isNotEmpty prepend="AND" property="Position">
+        T.Position =#Position#
+      </isNotEmpty>
+      
+    </sql>
+
+    <!--新增-->
+    <insert id="Insert" parameterClass="T_Banner">
+      INSERT INTO T_Banner
+      (Title
+      ,Position
+      ,ImageUrl
+      ,RedirectUrl
+      ,SortId
+      ,IsDelete
+      ,CreateTime
+      ,Creator)
+      VALUES
+      (#Title#
+      ,#Position#
+      ,#ImageUrl#
+      ,#RedirectUrl#
+      ,#SortId#
+      ,#IsDelete#
+      ,#CreateTime#
+      ,#Creator#)
+      <selectKey property="Id" type="post" resultClass="long">
+        Select @@IDENTITY
+      </selectKey>
+    </insert>
+
+    <!--逻辑删除-->
+    <update id="Delete" parameterClass="Hashtable">
+      UPDATE T_Banner
+      SET IsDelete=1 Where Id=#Id#
+    </update>
+
+    <!--逻辑删除-->
+    <update id="DeleteList" parameterClass="Hashtable">
+      UPDATE T_Banner
+      SET IsDelete=1 Where Id
+      <iterate prepend="In" property="Ids" open="(" close=")" conjunction=",">#Ids[]#</iterate>
+    </update>
+
+    <update id="DeleteAll" parameterClass="Hashtable">
+      UPDATE T_Banner
+      SET IsDelete=1 Where Position=#Position#
+    </update>
+    
+    <!--更新-->
+    <update id="Update" parameterClass="T_Banner">
+      UPDATE T_Banner
+      SET
+      Title = #Title#
+      ,Position = #Position#
+      ,ImageUrl = #ImageUrl#
+      ,RedirectUrl = #RedirectUrl#
+      ,SortId = #SortId#
+      ,IsDelete = #IsDelete#
+      ,CreateTime = #CreateTime#
+      ,Creator = #Creator#
+      WHERE  Id=#Id#
+    </update>
+
+    <!--更新-->
+    <update id="UpdateDelete" parameterClass="T_Banner">
+      UPDATE T_Banner
+      SET
+      IsDelete = #IsDelete#
+      WHERE   Title = #Title#
+      AND Position = #Position#
+      AND ImageUrl = #ImageUrl#
+      AND RedirectUrl = #RedirectUrl#
+    </update>
+
+    <!--获取数据列-->
+    <select id="GetVList" parameterClass="Hashtable" resultClass="T_Banner">
+      select * from
+      (select * ,ROW_NUMBER() over ( PARTITION by Position order by SortId desc) RN
+      from T_Banner ) as T
+      where T.RN = 1
+      AND T.IsDelete=0
+      <isNotEmpty prepend="AND" property="Position">
+        T.Position like '%'+#Position#+'%'
+      </isNotEmpty>
+      Order By T.SortId DESC
+    </select>
+
+    <!--获取分页数据-->
+    <select id="GetVListByPage" parameterClass="Hashtable" resultClass="T_Banner">
+      Select * From (Select ROW_NUMBER() Over(Order By T.Id DESC) Row_Index,T.*
+      From V_Banner T
+      ) TT
+      Where TT.Row_Index Between ((#PageIndex#-1)*#PageSize#+1) And (#PageIndex#*#PageSize#)
+      <isNotEmpty prepend="AND" property="Position">
+        TT.Position like '%'+#Position#+'%'
+      </isNotEmpty>
+      Order By TT.SortId DESC
+    </select>
+
+    <!--获取数据列-->
+    <select id="GetList" parameterClass="Hashtable" resultClass="T_Banner">
+      SELECT T.* From T_Banner T
+      <include refid="QueryParams"/>
+      Order By T.Id DESC
+    </select>
+
+    <!--获取分页数据-->
+    <select id="GetListByPage" parameterClass="Hashtable" resultClass="T_Banner">
+      Select * From (Select ROW_NUMBER() Over(Order By T.Id DESC) Row_Index,T.*
+      From T_Banner T
+      <include refid="QueryParams"/>
+      ) TT
+      Where TT.Row_Index Between ((#PageIndex#-1)*#PageSize#+1) And (#PageIndex#*#PageSize#)
+    </select>
+    
+
+    <!--获取记录数-->
+    <select id="GetRecord" parameterClass="Hashtable" resultClass="int">
+      Select Count(1) From T_Banner T
+      <include refid="QueryParams"/>
+    </select>
+
+    <!--获取表映射实体-->
+    <select id="GetEntity" parameterClass="Hashtable" resultClass="T_Banner">
+      Select Top 1 T.* From T_Banner T
+      Where T.IsDelete=0
+      <isNotEmpty prepend="And" property="Id">
+        T.Id=#Id#
+      </isNotEmpty>
+    </select>
+
+    <!--是否存在该记录-->
+    <select id="IsExist"  parameterClass="Hashtable" resultClass="int">
+      Select Count(1) From T_Banner T
+      <include refid="QueryParams"/>
+    </select>
+
+    <!--是否存在该记录-->
+    <select id="IsRealExist"  parameterClass="Hashtable" resultClass="int">
+      Select Count(1) From T_Banner T
+      Where 1=1
+      <isNotEmpty prepend="AND" property="Position">
+        T.Position =#Position#
+      </isNotEmpty>
+      <isNotEmpty prepend="AND" property="ImageUrl">
+        T.ImageUrl =#ImageUrl#
+      </isNotEmpty>
+      <isNotNull prepend="AND" property="RedirectUrl">
+        T.RedirectUrl =#RedirectUrl#
+      </isNotNull>
+      <isNotEmpty prepend="AND" property="Title">
+        T.Title =#Title#
+      </isNotEmpty>
+    </select>
+
+    <!--获取前N行数据-->
+    <select id="GetTop" parameterClass="Hashtable" resultClass="T_Banner">
+      Select Top (#Num#) * From T_Banner T
+      <include refid="QueryParams"/>
+    </select>
+  </statements>
+</sqlMap>
