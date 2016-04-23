@@ -3,29 +3,6 @@
 }
 <!--banner-->
 <div class="banner">
-    <!-- banner-text Slider starts Here -->
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/responsiveslides.min.js"></script>
-    <script>
-        // You can also use "$(window).load(function() {"
-        $(function () {
-            // Slideshow 3
-            $("#slider3").responsiveSlides({
-                auto: true,
-                pager: true,
-                nav: true,
-                speed: 500,
-                namespace: "callbacks",
-                before: function () {
-                    $('.events').append("<li>before event fired.</li>");
-                },
-                after: function () {
-                    $('.events').append("<li>after event fired.</li>");
-                }
-            });
-        });
-    </script>
-    <!--//End-slider-script -->
     <div id="top" class="callbacks_container">
         <ul class="rslides" id="slider3">
             <li>
@@ -33,11 +10,11 @@
                 </div>
             </li>
             <li>
-                <div class="banner1 banner2">
+                <div class="banner2">
                 </div>
             </li>
             <li>
-                <div class="banner1 banner3">
+                <div class="banner3">
                 </div>
             </li>
         </ul>
@@ -163,39 +140,46 @@
             </div>
         </section>
 
-        @section scripts{
-            <!--FlexSlider-->
-        <script type="text/javascript" src="~/Scripts/move-top.js"></script>
-        <script type="text/javascript" src="~/Scripts/easing.js"></script>
-            <script defer src="~/Scripts/jquery.flexslider.js"></script>
-            <script type="text/javascript">
-                $(window).load(function () {
-                    $('.flexslider').flexslider({
-                        animation: "slide",
-                        start: function (slider) {
-                            $('body').removeClass('loading');
-                        }
-                    });
-                });
-            </script>
-            <!--End-slider-script-->
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    /*
-                    var defaults = {
-                        containerID: 'toTop', // fading element id
-                        containerHoverID: 'toTopHover', // fading element hover id
-                        scrollSpeed: 1200,
-                        easingType: 'linear'
-                    };
-                    */
-                    $().UItoTop({ easingType: 'easeOutQuart' });
-
-                });
-            </script>
-            <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-            <!--//smooth-scrolling-of-move-up-->
-        }
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     </div>
 </div>
 <!--//services-->
+
+
+@section scripts{
+    <script src="~/Scripts/responsiveslides.min.js"></script>
+    <!--FlexSlider-->
+    <script type="text/javascript" src="~/Scripts/move-top.js"></script>
+    <script type="text/javascript" src="~/Scripts/easing.js"></script>
+    <script defer src="~/Scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#slider3").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    console.log("before event fired");
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    console.log("after event fired");
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+
+    <!--//smooth-scrolling-of-move-up-->
+}

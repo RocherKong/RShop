@@ -43,8 +43,6 @@
 
 </head>
 <body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">*@
-        @*<div class="container">*@
     <!--header-->
     <div class="header">
         <div class="container">
@@ -116,9 +114,8 @@
             <!-- //search-scripts -->
         </div>
     </div>
-        @*</div>*@
-        @*</div>*@
     <!--//header-->
+
         @RenderBody()
         <div class="footer">
             <div class="container">
@@ -140,6 +137,7 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="~/Scripts/bootstrap.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
