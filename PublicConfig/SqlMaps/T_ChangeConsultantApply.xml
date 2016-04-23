@@ -9,8 +9,8 @@
 <sqlMap namespace="T_ChangeConsultantApply" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
   <alias>
     <!--设置查询映射表实体-->
-    <typeAlias alias="T_ChangeConsultantApply" type="MaiDao.TradingCenter.Entity.T_ChangeConsultantApply,MaiDao.TradingCenter.Entity" />
-    <typeAlias alias="V_ChangeConsultantApply" type="MaiDao.TradingCenter.Entity.Views.V_ChangeConsultantApply,MaiDao.TradingCenter.Entity" />
+    <typeAlias alias="T_ChangeConsultantApply" type="RShop.TradingCenter.Entity.T_ChangeConsultantApply,RShop.TradingCenter.Entity" />
+    <typeAlias alias="V_ChangeConsultantApply" type="RShop.TradingCenter.Entity.Views.V_ChangeConsultantApply,RShop.TradingCenter.Entity" />
     
   </alias>
   <!--缓存策略-->

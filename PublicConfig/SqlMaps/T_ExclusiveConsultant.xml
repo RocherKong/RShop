@@ -10,8 +10,8 @@
   <alias>
     <!--设置查询映射表实体-->
     
-    <typeAlias alias="T_ExclusiveConsultant" type="MaiDao.TradingCenter.Entity.T_ExclusiveConsultant,MaiDao.TradingCenter.Entity" />
-    <typeAlias alias="V_ExclusiveConsultant" type="MaiDao.TradingCenter.Entity.Views.V_ExclusiveConsultant,MaiDao.TradingCenter.Entity" />
+    <typeAlias alias="T_ExclusiveConsultant" type="RShop.TradingCenter.Entity.T_ExclusiveConsultant,RShop.TradingCenter.Entity" />
+    <typeAlias alias="V_ExclusiveConsultant" type="RShop.TradingCenter.Entity.Views.V_ExclusiveConsultant,RShop.TradingCenter.Entity" />
   </alias>
   <!--缓存策略-->
   <cacheModels>

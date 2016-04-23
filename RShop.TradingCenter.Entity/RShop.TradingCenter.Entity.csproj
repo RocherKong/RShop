@@ -41,40 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Enums\AccountEnums.cs" />
+    <Compile Include="Enums\ConsultingTypeEnums.cs" />
+    <Compile Include="Enums\EnquiryStatus.cs" />
+    <Compile Include="Enums\NewsTypeEnums.cs" />
+    <Compile Include="Enums\ProductRepairEnums.cs" />
+    <Compile Include="Enums\ProductStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rel_Category_Attribute.cs" />
-    <Compile Include="Rel_Enterprise_Brand.cs" />
-    <Compile Include="Rel_Member_Enterprise.cs" />
-    <Compile Include="T_Administrator.cs" />
-    <Compile Include="T_App.cs" />
     <Compile Include="T_Banner.cs" />
-    <Compile Include="T_Brand.cs" />
-    <Compile Include="T_ChangeConsultantApply.cs" />
-    <Compile Include="T_City.cs" />
-    <Compile Include="T_ConsultantScore.cs" />
-    <Compile Include="T_ConsultingHistory.cs" />
-    <Compile Include="T_Country.cs" />
-    <Compile Include="T_DeliveryAddress.cs" />
-    <Compile Include="T_District.cs" />
-    <Compile Include="T_Enterprise.cs" />
-    <Compile Include="T_ExclusiveConsultant.cs" />
-    <Compile Include="T_Favorite.cs" />
-    <Compile Include="T_InviteMember.cs" />
-    <Compile Include="T_Invoice.cs" />
-    <Compile Include="T_Member.cs" />
-    <Compile Include="T_Product.cs" />
-    <Compile Include="T_ProductAttribute.cs" />
-    <Compile Include="T_ProductAttributeOption.cs" />
-    <Compile Include="T_ProductAttributeValue.cs" />
-    <Compile Include="T_ProductCategory.cs" />
-    <Compile Include="T_ProductDoc.cs" />
-    <Compile Include="T_ProductImage.cs" />
-    <Compile Include="T_ProductRepair.cs" />
-    <Compile Include="T_Province.cs" />
-    <Compile Include="T_Score.cs" />
-    <Compile Include="T_ScoreLog.cs" />
-    <Compile Include="V_Enterprise_Member.cs" />
-    <Compile Include="V_ExclusiveConsultant.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,7 +9,7 @@
 <sqlMap namespace="T_Administrator" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
   <alias>
     <!--设置查询映射表实体-->
-    <typeAlias alias="T_Administrator" type="MaiDao.TradingCenter.Entity.T_Administrator,MaiDao.TradingCenter.Entity" />
+    <typeAlias alias="T_Administrator" type="RShop.TradingCenter.Entity.T_Administrator,RShop.TradingCenter.Entity" />
   </alias>
   <!--缓存策略-->
   <cacheModels>

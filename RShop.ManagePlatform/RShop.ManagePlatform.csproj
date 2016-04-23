@@ -129,83 +129,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\PublicConfig\SqlMaps\Address.xml">
-      <Link>SqlMaps\Address.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\Rel_Category_Attribute.xml">
-      <Link>SqlMaps\Rel_Category_Attribute.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_Administrator.xml">
-      <Link>SqlMaps\T_Administrator.xml</Link>
-    </Content>
     <Content Include="..\PublicConfig\SqlMaps\T_Banner.xml">
       <Link>SqlMaps\T_Banner.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_Brand.xml">
-      <Link>SqlMaps\T_Brand.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ChangeConsultantApply.xml">
-      <Link>SqlMaps\T_ChangeConsultantApply.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ConsultantScore.xml">
-      <Link>SqlMaps\T_ConsultantScore.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ConsultingHistory.xml">
-      <Link>SqlMaps\T_ConsultingHistory.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_DeliveryAddress.xml">
-      <Link>SqlMaps\T_DeliveryAddress.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_Enterprise.xml">
-      <Link>SqlMaps\T_Enterprise.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ExclusiveConsultant.xml">
-      <Link>SqlMaps\T_ExclusiveConsultant.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_Favorite.xml">
-      <Link>SqlMaps\T_Favorite.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_InviteMember.xml">
-      <Link>SqlMaps\T_InviteMember.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_Invoice.xml">
-      <Link>SqlMaps\T_Invoice.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_Member.xml">
-      <Link>SqlMaps\T_Member.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_News.xml">
-      <Link>SqlMaps\T_News.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_Product.xml">
-      <Link>SqlMaps\T_Product.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ProductAttribute.xml">
-      <Link>SqlMaps\T_ProductAttribute.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ProductAttributeOption.xml">
-      <Link>SqlMaps\T_ProductAttributeOption.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ProductAttributeValue.xml">
-      <Link>SqlMaps\T_ProductAttributeValue.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ProductCategory.xml">
-      <Link>SqlMaps\T_ProductCategory.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ProductDoc.xml">
-      <Link>SqlMaps\T_ProductDoc.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ProductImage.xml">
-      <Link>SqlMaps\T_ProductImage.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ProductRepair.xml">
-      <Link>SqlMaps\T_ProductRepair.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_Score.xml">
-      <Link>SqlMaps\T_Score.xml</Link>
-    </Content>
-    <Content Include="..\PublicConfig\SqlMaps\T_ScoreLog.xml">
-      <Link>SqlMaps\T_ScoreLog.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Config\Permission.xml" />
     <Content Include="css\AdminLTE.css" />
@@ -1220,6 +1146,7 @@
     <Content Include="Views\Banner\Add.cshtml" />
     <Content Include="Views\Banner\Edit.cshtml" />
     <Content Include="Views\Banner\Index.cshtml" />
+    <Content Include="providers.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

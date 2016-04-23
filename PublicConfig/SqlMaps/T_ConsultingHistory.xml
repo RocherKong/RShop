@@ -9,8 +9,8 @@
 <sqlMap namespace="T_ConsultingHistory" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
   <alias>
     <!--设置查询映射表实体-->
-    <typeAlias alias="T_ConsultingHistory" type="MaiDao.TradingCenter.Entity.T_ConsultingHistory,MaiDao.TradingCenter.Entity" />
-    <typeAlias alias="V_ConsultingHistory" type="MaiDao.TradingCenter.Entity.Views.V_ConsultingHistory,MaiDao.TradingCenter.Entity" />
+    <typeAlias alias="T_ConsultingHistory" type="RShop.TradingCenter.Entity.T_ConsultingHistory,RShop.TradingCenter.Entity" />
+    <typeAlias alias="V_ConsultingHistory" type="RShop.TradingCenter.Entity.Views.V_ConsultingHistory,RShop.TradingCenter.Entity" />
     
   </alias>
   <!--缓存策略-->

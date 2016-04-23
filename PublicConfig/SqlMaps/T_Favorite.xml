@@ -9,8 +9,8 @@
 <sqlMap namespace="T_Favorite" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
   <alias>
     <!--设置查询映射表实体-->
-    <typeAlias alias="T_Favorite" type="MaiDao.TradingCenter.Entity.T_Favorite,MaiDao.TradingCenter.Entity" />
-    <typeAlias alias="V_Favorite" type="MaiDao.TradingCenter.Entity.Views.V_Favorite,MaiDao.TradingCenter.Entity" />
+    <typeAlias alias="T_Favorite" type="RShop.TradingCenter.Entity.T_Favorite,RShop.TradingCenter.Entity" />
+    <typeAlias alias="V_Favorite" type="RShop.TradingCenter.Entity.Views.V_Favorite,RShop.TradingCenter.Entity" />
   </alias>
   <!--缓存策略-->
   <cacheModels>

@@ -31,7 +31,7 @@
         //browse_button: 'btn_upLoadImg',
         uptoken_url: '/QiNiu/GetToken',
         unique_names: true,
-        domain: 'http://static.i4ta.com/',
+        domain: 'http://7xt1z0.com2.z0.glb.qiniucdn.com/',
         max_file_size: '100mb',
         flash_swf_url: '/js/plugins/plupload/Moxie.swf',
         max_retries: 3,
