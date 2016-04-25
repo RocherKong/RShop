@@ -3,18 +3,18 @@
 <ProviderConfig xmlns="http://ahoo.me/schemas/ProviderConfig.xsd">
   <Providers>
     <!--消息队列 提供者-->
-    <Provider Name="RabbitMQProvider" Type="RShop.Infrastructure.MQ.Impl.RabbitMQProvider,RShop.Infrastructure.MQ">
+    <Provider Name="RabbitMQProvider" Type="RShop.Infrastructure.MQ.RabbitMQProvider,RShop.Infrastructure.MQ">
       <Parameters>
-        <Parameter Key="HostName" Value="8.8.8.8"/> 
-        <Parameter Key="UserName" Value="sms"/>
-        <Parameter Key="Password" Value="sms"/>
+        <Parameter Key="HostName" Value="192.168.75.128"/>
+        <Parameter Key="UserName" Value="guest"/>
+        <Parameter Key="Password" Value="guest"/>
       </Parameters>
     </Provider>
-    <Provider Name="RabbitMQProvider_Logging" Type="RShop.Infrastructure.MQ.Impl.RabbitMQProvider,RShop.Infrastructure.MQ">
+    <Provider Name="RabbitMQProvider_Logging" Type="RShop.Infrastructure.MQ.RabbitMQProvider,RShop.Infrastructure.MQ">
       <Parameters>
-        <Parameter Key="HostName" Value="8.8.8.8"/> 
-        <Parameter Key="UserName" Value="logging"/>
-        <Parameter Key="Password" Value="logging"/>
+        <Parameter Key="HostName" Value="192.168.75.128"/> 
+        <Parameter Key="UserName" Value="guest"/>
+        <Parameter Key="Password" Value="guest"/>
       </Parameters>
     </Provider>
     <!--短信服务提供者-->

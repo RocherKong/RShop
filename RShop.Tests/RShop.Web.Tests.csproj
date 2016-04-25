@@ -89,6 +89,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Provider\Cache_Test.cs" />
+    <Compile Include="Provider\MQ_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\RShop.Infrastructure.Provider\Provider.xml">
@@ -105,9 +106,17 @@
       <Project>{8e86f45f-9a91-4032-9637-0e804cb72e6c}</Project>
       <Name>RShop.Infrastructure.Cache</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RShop.Infrastructure.MQ\RShop.Infrastructure.MQ.csproj">
+      <Project>{df08a2d5-3e97-4df7-8869-32ff5ab675f0}</Project>
+      <Name>RShop.Infrastructure.MQ</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RShop.Infrastructure.Provider\RShop.Infrastructure.Provider.csproj">
       <Project>{ef7f3e45-1360-4449-91c3-f8a0765e26d1}</Project>
       <Name>RShop.Infrastructure.Provider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RShop.TradingCenter.Entity\RShop.TradingCenter.Entity.csproj">
+      <Project>{07A3CFB9-2621-4BBC-A415-4FB09749BD85}</Project>
+      <Name>RShop.TradingCenter.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\RShop\RShop.Web.csproj">
       <Project>{C949C4F3-239D-454B-B5E2-A88CD3742EEE}</Project>

@@ -19,7 +19,7 @@ namespace RShop.Tests.Provider
         public void Cache_AddTest()
         {
             string token = Guid.NewGuid().ToString("N");
-            bool isSuccess = CacheProvider.Add<String>(String.Format("Token:{0}",token),"孔翔的token");
+            bool isSuccess = CacheProvider.Add<String>(String.Format("Token:{0}",token),"rocher的token");
             Assert.IsTrue(isSuccess);
         }
     }
