@@ -14,7 +14,8 @@
         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
     </script>
     <!-- //Custom Theme files -->
-    
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <link href="~/Content/style.css" type="text/css" rel="stylesheet" media="all">
     <link rel="stylesheet" href="~/Content/flexslider.css" type="text/css" media="screen" />
     <!-- js -->
@@ -134,8 +135,7 @@
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="~/Scripts/bootstrap.js"></script>
-    <link href="~/Content/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

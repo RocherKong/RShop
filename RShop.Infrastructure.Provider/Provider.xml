@@ -28,7 +28,7 @@
     <!--缓存提供者-->
     <Provider Name="RedisCacheProvider" Type="RShop.Infrastructure.Cache.Impl.RedisCacheProvider,RShop.Infrastructure.Cache">
       <Parameters>
-        <Parameter Key="ConnectionString" Value="service.RShop.me,password=b0db62a2939741f3ba560ca6861bc582"/>
+        <Parameter Key="ConnectionString" Value="192.168.75.128,password=rocher"/>
       </Parameters>
     </Provider>
     <Provider Name="EMailProviderBasic" Type="RShop.Infrastructure.EMail.Impl.EMailProviderBasic,RShop.Infrastructure.EMail">
