@@ -51,6 +51,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RShop.TradingCenter", "RSho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RShop.TradingCenter.DomainService", "RShop.TradingCenter.DomainService\RShop.TradingCenter.DomainService.csproj", "{9B98FA2A-9C23-4BFE-A392-CE90BF2DA188}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RShop.Infrastructure.Const", "Const\RShop.Infrastructure.Const.csproj", "{A7B06941-11FE-4342-9849-A924121D8168}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{9B98FA2A-9C23-4BFE-A392-CE90BF2DA188}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B98FA2A-9C23-4BFE-A392-CE90BF2DA188}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B98FA2A-9C23-4BFE-A392-CE90BF2DA188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B06941-11FE-4342-9849-A924121D8168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B06941-11FE-4342-9849-A924121D8168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B06941-11FE-4342-9849-A924121D8168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B06941-11FE-4342-9849-A924121D8168}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,5 +145,6 @@ Global
 		{07A3CFB9-2621-4BBC-A415-4FB09749BD85} = {F8224B09-68AE-4072-8263-BD394A73936A}
 		{4B0773BA-F1AC-4D07-B976-D0B0650043AD} = {22120CAF-3D09-4AFE-96A1-8C72E3FFF521}
 		{9B98FA2A-9C23-4BFE-A392-CE90BF2DA188} = {4B0773BA-F1AC-4D07-B976-D0B0650043AD}
+		{A7B06941-11FE-4342-9849-A924121D8168} = {DE241A49-F88B-4477-9995-E749818890C9}
 	EndGlobalSection
 EndGlobal

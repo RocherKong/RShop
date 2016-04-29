@@ -14,12 +14,107 @@
     </Menu>
   </Module>
   <Module Name="订单管理" Code="OrderManagement">
-
   </Module>
   <Module Name="统计报表"  Code="Report">
 
   </Module>
   <Module Name="系统管理"  Code="Sys">
 
-  </Module>
+  </Module><?xml version="1.0" encoding="utf-8" ?>
+  <!--运维平台功能权限-->
+  <PermissionConfig xmlns="http://51mydao.com/schemas/PermissionConfig.xsd">
+    <Permissions>
+      <Module Name="仪表盘"  Code="001">
+      </Module>
+      <Module Name="会员管理"  Code="002">
+        <Menus>
+          <Menu Name="个人账户列表"  Controller="ProductCategory" Action="Index" Code="001">
+            <Actions>
+              <Action Name="企业账户列表"  Controller="ProductCategory" Action="AddPeer" Code="001"/>
+              <Action Name="售后服务"  Controller="ProductCategory" Action="AddChild" Code="002"/>
+              <Action Name="售后服务"  Controller="ProductCategory" Action="AddChild" Code="003"/>
+            </Actions>
+          </Menu>
+          <Menu Name="企业账户列表"  Controller="ProductCategory" Action="Index" Code="002"></Menu>
+          <Menu Name="售后服务"  Controller="ProductCategory" Action="Index" Code="003"></Menu>
+          <Menu Name="更换顾问申请"  Controller="ProductCategory" Action="Index" Code="004"></Menu>
+        </Menus>
+      </Module>
+      <Module Name="供方管理"  Code="003">
+        <Menus>
+          <Menu Name="添加账号" Controller="Supplier" Action="Add" Code="001"> </Menu>
+          <Menu Name="账户列表" Controller="Supplier" Action="Index" Code="002"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="产品管理"  Code="006" >
+        <Menus>
+          <Menu Name="产品分类"  Controller="ProductCategory" Action="Index" Code="001">
+            <Actions>
+              <Action Name="添加同级分类"  Controller="ProductCategory" Action="AddPeer" Code="001"/>
+              <Action Name="添加下级分类"  Controller="ProductCategory" Action="AddChild" Code="002"/>
+            </Actions>
+          </Menu>
+          <Menu Name="公共参数管理" Controller="Supplier" Action="Add" Code="002"> </Menu>
+          <Menu Name="品牌管理" Controller="Supplier" Action="Add" Code="003"> </Menu>
+          <Menu Name="产品列表" Controller="Supplier" Action="Add" Code="004"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="询价管理" Code="007">
+        <Menus>
+          <Menu Name="待处理" Controller="index" Action="Add" Code="001"> </Menu>
+          <Menu Name="已处理" Controller="Add" Action="Add" Code="002"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="议价管理" Code="008">
+        <Menus>
+          <Menu Name="待处理" Controller="index" Action="Add" Code="001"> </Menu>
+          <Menu Name="已处理" Controller="Add" Action="Add" Code="002"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="订单管理" Code="009">
+        <Menus>
+          <Menu Name="待确认" Controller="index" Action="Add" Code="001"> </Menu>
+          <Menu Name="已确认" Controller="Add" Action="Add" Code="002"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="框架合同管理" Code="010">
+        <Menus>
+          <Menu Name="待审核" Controller="index" Action="Add" Code="001"> </Menu>
+          <Menu Name="执行中" Controller="Add" Action="Add" Code="002"> </Menu>
+          <Menu Name="框架订单" Controller="Add" Action="Add" Code="003"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="市场运维管理" Code="011">
+        <Menus>
+          <Menu Name="公告" Controller="Add" Action="Add" Code="001"> </Menu>
+          <Menu Name="Banner" Controller="Add" Action="Add" Code="002"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="顾问管理" Code="012">
+        <Menus>
+          <Menu Name="顾问列表"  Controller="ProductCategory" Action="Index" Code="001">
+            <Actions>
+              <Action Name="添加同级分类"  Controller="ProductCategory" Action="AddPeer" Code="001"/>
+              <Action Name="添加下级分类"  Controller="ProductCategory" Action="AddChild" Code="002"/>
+            </Actions>
+          </Menu>
+          <Menu Name="客户咨询" Controller="Add" Action="Add" Code="002"> </Menu>
+          <Menu Name="评分管理" Controller="Add" Action="Add" Code="003"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="统计报表"  Code="013">
+        <Menus>
+          <Menu Name="产品销售量" Controller="Add" Action="Add" Code="001"> </Menu>
+          <Menu Name="成交额" Controller="Add" Action="Add" Code="002"> </Menu>
+        </Menus>
+      </Module>
+      <Module Name="系统管理"  Code="014">
+        <Menus>
+          <Menu Name="角色权限管理" Controller="Add" Action="Add" Code="001"> </Menu>
+          <Menu Name="管理员管理" Controller="Add" Action="Add" Code="002"> </Menu>
+        </Menus>
+      </Module>
+    </Permissions>
+  </PermissionConfig>
+
 </Permission>

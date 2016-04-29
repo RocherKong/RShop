@@ -9,7 +9,7 @@
 <sqlMap namespace="T_Administrator" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
   <alias>
     <!--设置查询映射表实体-->
-    <typeAlias alias="T_Administrator" type="RShop.TradingCenter.Entity.T_Administrator,RShop.TradingCenter.Entity" />
+    <typeAlias alias="T_Administrator" type="MaiDao.TradingCenter.Entity.T_Administrator,MaiDao.TradingCenter.Entity" />
   </alias>
   <!--缓存策略-->
   <cacheModels>
@@ -91,7 +91,7 @@
       UPDATE T_Administrator
       SET IsConsultant=0 Where Id=#Id#
     </update>
-    
+
 
     <!--逻辑删除-->
     <update id="DeleteList" parameterClass="Hashtable">
@@ -124,7 +124,7 @@
 
     <!--获取数据列-->
     <select id="GetList" parameterClass="Hashtable" resultClass="T_Administrator">
-      SELECT T.* From T_Administrator T
+      SELECT T.* From T_Administrator T With(NoLock)
       <include refid="QueryParams"/>
       Order By T.Id DESC
     </select>
@@ -132,7 +132,7 @@
     <!--获取分页数据-->
     <select id="GetListByPage" parameterClass="Hashtable" resultClass="T_Administrator">
       Select * From (Select ROW_NUMBER() Over(Order By T.Id DESC) Row_Index,T.*
-      From T_Administrator T
+      From T_Administrator T With(NoLock)
       <include refid="QueryParams"/>
       ) TT
       Where TT.Row_Index Between ((#PageIndex#-1)*#PageSize#+1) And (#PageIndex#*#PageSize#)
@@ -140,35 +140,47 @@
 
     <!--获取记录数-->
     <select id="GetRecord" parameterClass="Hashtable" resultClass="int">
-      Select Count(1) From T_Administrator T
+      Select Count(1) From T_Administrator T With(NoLock)
       <include refid="QueryParams"/>
     </select>
 
     <!--获取表映射实体-->
     <select id="GetEntity" parameterClass="Hashtable" resultClass="T_Administrator">
-      Select Top 1 T.* From T_Administrator T
+      Select Top 1 T.* From T_Administrator T With(NoLock)
       Where T.IsDelete=0
       <isNotEmpty prepend="And" property="Id">
         T.Id=#Id#
       </isNotEmpty>
     </select>
 
-    <select id="GetEntityByEmail" parameterClass="Hashtable" resultClass="T_Administrator">
-      Select Top 1 T.* From T_Administrator T
-      Where T.EMail=#EMail#
+    <select id="GetEntityByCondition" parameterClass="Hashtable" resultClass="T_Administrator">
+      Select Top 1 T.* From T_Administrator T With(NoLock)
+      Where IsDelete=0
+      AND UserName=#UserName#
+      <isNotEmpty prepend="AND" property="EMail">
+        EMail=#EMail#
+      </isNotEmpty>
     </select>
-    
+
 
     <!--是否存在该记录-->
     <select id="IsExist"  parameterClass="Hashtable" resultClass="int">
-      Select Count(1) From T_Administrator T
+      Select Count(1) From T_Administrator T With(NoLock)
       <include refid="QueryParams"/>
     </select>
 
     <!--获取前N行数据-->
     <select id="GetTop" parameterClass="Hashtable" resultClass="T_Administrator">
-      Select Top (#Num#) * From T_Administrator T
+      Select Top (#Num#) * From T_Administrator T With(NoLock)
       <include refid="QueryParams"/>
+    </select>
+
+    <!--登录-->
+    <select id="LogOn"  parameterClass="Hashtable" resultClass="T_Administrator">
+      Select T.* From T_Administrator T
+      Where T.IsDelete=0
+      And T.UserName=#UserName#
+      And T.Password=#Password#
     </select>
   </statements>
 </sqlMap>

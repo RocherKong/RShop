@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using RShop.Infrastructure.Web.Filter;
+using System.Web;
 using System.Web.Mvc;
 
 namespace RShop
@@ -7,7 +8,9 @@ namespace RShop
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+          //  filters.Add(new HandleErrorAttribute());
+           // filters.Add(new ExceptionAttribute());
+       //     filters.Add(new AuthAccountAttribute { Roles = "Admin", LogOnUrl = "/Account/Logon" });
         }
     }
 }

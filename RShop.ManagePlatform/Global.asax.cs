@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RShop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,8 +12,10 @@ namespace RShop.ManagePlatform
     {
         protected void Application_Start()
         {
+          
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
     }
 }

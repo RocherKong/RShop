@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="T_Administrator.cs" />
     <Compile Include="Enums\AccountEnums.cs" />
     <Compile Include="Enums\ConsultingTypeEnums.cs" />
     <Compile Include="Enums\EnquiryStatus.cs" />
