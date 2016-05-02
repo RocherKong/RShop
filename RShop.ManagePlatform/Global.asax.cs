@@ -12,10 +12,11 @@ namespace RShop.ManagePlatform
     {
         protected void Application_Start()
         {
-          
+
             AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+        
         }
     }
 }

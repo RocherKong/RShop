@@ -15,11 +15,15 @@ namespace RShop.Infrastructure.Web.Filter
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
     public class AuthAccountAttribute : FilterAttribute, IAuthorizationFilter
     {
+        /// <summary>
+        /// 登录链接地址
+        /// </summary>
         public String LogOnUrl { get; set; }
         public void OnAuthorization(AuthorizationContext filterContext)
         {
+
             bool inherit = true;
-            if (!filterContext.ActionDescriptor.IsDefined(typeof(AllowAnonymousAttribute), inherit)&&!filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(AllowAnonymousAttribute),true))
+            if (!filterContext.ActionDescriptor.IsDefined(typeof(AllowAnonymousAttribute), inherit) && !filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true))
             {
                 if (!IsAuthenticated())
                 {
@@ -36,8 +40,13 @@ namespace RShop.Infrastructure.Web.Filter
                         result.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
                         filterContext.Result = result;
                     }
+                    else
+                    {
+                        filterContext.Result = new RedirectResult(LogOnUrl);
+                    }
                 }
             }
+
         }
 
         /// <summary>
