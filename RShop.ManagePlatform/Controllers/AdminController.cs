@@ -25,12 +25,21 @@ namespace RShop.ManagePlatform.Controllers
             }
         }
 
+        protected override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            // filterContext.ActionDescriptor.ActionName;
+          var controllername=  filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
+            base.OnAuthorization(filterContext);
+        }
+
     }
 
     public class Administrator
     {
         public long Id { get; set; }
     }
+
+   
     
 
 }
