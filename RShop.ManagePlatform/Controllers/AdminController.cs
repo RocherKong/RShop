@@ -13,9 +13,7 @@ namespace RShop.ManagePlatform.Controllers
     /// </summary>
     public abstract class AdminController : Controller
     {
-        public Administrator Admin { get { return new Administrator { Id = 1 }; } }
-
-        public T_Administrator CurrentUser
+        public T_Administrator Admin
         {
             get
             {
@@ -33,4 +31,6 @@ namespace RShop.ManagePlatform.Controllers
     {
         public long Id { get; set; }
     }
+    
+
 }

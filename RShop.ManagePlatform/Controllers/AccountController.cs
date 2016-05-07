@@ -43,7 +43,7 @@ namespace RShop.ManagePlatform.Controllers
                 {
                     throw new Exception("用户名或密码错误！");
                 }
-                CurrentUser = admin_Entity;
+                Admin = admin_Entity;
                 return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
