@@ -19,16 +19,6 @@ namespace RShop.ManagePlatform.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult LogOn(String UserName, String Password)
-        //{
-        //    Session["Admin"] = new Administrator
-        //    {
-        //        Id = 1,
-        //    };
-        //    return RedirectToAction("Index", "Home");
-        //}
-
         [HttpPost]
         public ActionResult LogOn(string userName, string password)
         {
