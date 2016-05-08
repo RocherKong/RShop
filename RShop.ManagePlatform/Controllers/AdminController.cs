@@ -38,8 +38,8 @@ namespace RShop.ManagePlatform.Controllers
     {
         public long Id { get; set; }
     }
+    
 
-   
     
 
 }
