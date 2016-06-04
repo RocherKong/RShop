@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RShop.Web", "RShop\RShop.Web.csproj", "{C949C4F3-239D-454B-B5E2-A88CD3742EEE}"
 EndProject
@@ -52,6 +52,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RShop.TradingCenter.DomainService", "RShop.TradingCenter.DomainService\RShop.TradingCenter.DomainService.csproj", "{9B98FA2A-9C23-4BFE-A392-CE90BF2DA188}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RShop.Infrastructure.Const", "Const\RShop.Infrastructure.Const.csproj", "{A7B06941-11FE-4342-9849-A924121D8168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R.Personal.Web", "R.Personal.Web\R.Personal.Web.csproj", "{4F052DBE-86A6-49CA-912C-703B66D9FFE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{A7B06941-11FE-4342-9849-A924121D8168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7B06941-11FE-4342-9849-A924121D8168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7B06941-11FE-4342-9849-A924121D8168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F052DBE-86A6-49CA-912C-703B66D9FFE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F052DBE-86A6-49CA-912C-703B66D9FFE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F052DBE-86A6-49CA-912C-703B66D9FFE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F052DBE-86A6-49CA-912C-703B66D9FFE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,5 +152,6 @@ Global
 		{4B0773BA-F1AC-4D07-B976-D0B0650043AD} = {22120CAF-3D09-4AFE-96A1-8C72E3FFF521}
 		{9B98FA2A-9C23-4BFE-A392-CE90BF2DA188} = {4B0773BA-F1AC-4D07-B976-D0B0650043AD}
 		{A7B06941-11FE-4342-9849-A924121D8168} = {DE241A49-F88B-4477-9995-E749818890C9}
+		{4F052DBE-86A6-49CA-912C-703B66D9FFE4} = {DEFDF950-EEB1-485C-AB9B-CF2E22C4B21F}
 	EndGlobalSection
 EndGlobal
