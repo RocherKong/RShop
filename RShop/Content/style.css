@@ -110,17 +110,17 @@ span.menu {
 .banner1{
 	background:url(../images/banner.jpg)no-repeat 0px 0px;	
 	background-size:cover; 
-	min-height: 400px;
+	min-height: 500px;
 }
 .banner2{
 	background:url(../images/banner1.jpg)no-repeat 0px 0px;
 	background-size:cover; 
-    min-height: 400px;
+    min-height: 500px;
 }
 .banner3{
 	background:url(../images/banner2.jpg)no-repeat 0px 0px;
 	background-size:cover;
-    min-height: 400px;
+    min-height: 500px;
 }
 /*--//banner--*/
 /*------------------ Slider Part starts Here----------*/
