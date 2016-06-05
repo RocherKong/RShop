@@ -11,6 +11,7 @@
     <link href="~/css/Blog/lrtk.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="~/js/js.js"></script>
+    @RenderSection("css", required: false)
     <!-- 返回顶部调用 end-->
     <!--[if lt IE 9]>
     <script src="js/modernizr.js"></script>
@@ -101,5 +102,6 @@
     <!-- jQuery仿腾讯回顶部和建议 代码开始 -->
     <div id="tbox"> <a id="togbook" href="/e/tool/gbook/?bid=1"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
     <!-- 代码结束 -->
+    @RenderSection("js", required: false)
 </body>
 </html>

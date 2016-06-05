@@ -13,5 +13,10 @@ namespace R.Personal.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Detail()
+        {
+            return View();
+        }
     }
 }
