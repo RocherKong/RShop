@@ -92,21 +92,55 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\Blog\animation.css" />
+    <Content Include="css\Blog\lrtk.css" />
+    <Content Include="css\Blog\styles.css" />
+    <Content Include="css\Blog\view.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\foundation.css" />
     <Content Include="css\style.css" />
     <Content Include="css\tooltipster.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\Blog\01.jpg" />
+    <Content Include="images\Blog\02.jpg" />
+    <Content Include="images\Blog\03.jpg" />
+    <Content Include="images\Blog\04.jpg" />
+    <Content Include="images\Blog\05.jpg" />
+    <Content Include="images\Blog\06.jpg" />
+    <Content Include="images\Blog\07.jpg" />
+    <Content Include="images\Blog\08.jpg" />
+    <Content Include="images\Blog\09.jpg" />
+    <Content Include="images\Blog\art.jpg" />
+    <Content Include="images\Blog\artwork.png" />
     <Content Include="images\bg.png" />
+    <Content Include="images\Blog\icons.png" />
+    <Content Include="images\Blog\k01.jpg" />
+    <Content Include="images\Blog\k02.jpg" />
+    <Content Include="images\Blog\k03.jpg" />
     <Content Include="images\Mydao.jpg" />
+    <Content Include="images\Blog\nf.mp3" />
+    <Content Include="images\Blog\post1.jpg" />
+    <Content Include="images\Blog\quote-bg.png" />
     <Content Include="images\Rocher.jpg" />
     <Content Include="images\Rocher.png" />
+    <Content Include="images\Blog\s1.jpg" />
+    <Content Include="images\Blog\s2.jpg" />
+    <Content Include="images\Blog\s3.jpg" />
+    <Content Include="images\Blog\s4.jpg" />
+    <Content Include="images\Blog\s5.jpg" />
+    <Content Include="images\Blog\s6.jpg" />
+    <Content Include="images\Blog\s7.jpg" />
+    <Content Include="images\Blog\s8.jpg" />
+    <Content Include="images\Blog\vinyl.png" />
     <Content Include="js\app.js" />
     <Content Include="js\foundation.min.js" />
     <Content Include="js\jquery.tooltipster.js" />
+    <Content Include="js\js.js" />
     <Content Include="js\modernizr.foundation.js" />
+    <Content Include="js\modernizr.js" />
     <Content Include="js\scripts.js" />
+    <Content Include="js\silder.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -120,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -136,6 +171,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Shared\_BlogLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
