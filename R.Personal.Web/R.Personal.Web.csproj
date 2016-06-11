@@ -96,6 +96,7 @@
     <Content Include="css\Blog\lrtk.css" />
     <Content Include="css\Blog\styles.css" />
     <Content Include="css\Blog\view.css" />
+    <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\foundation.css" />
     <Content Include="css\style.css" />
@@ -145,6 +146,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="images\Rocher.webp" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
     <None Include="Properties\PublishProfiles\PersonalWeb.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
